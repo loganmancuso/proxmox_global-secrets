@@ -1,26 +1,21 @@
 ##############################################################################
 #
 # Author: Logan Mancuso
-# Created: 07.30.2023
+# Created: 11.27.2023
 #
 ##############################################################################
 
-resource "vault_kv_secret_v2" "example" {
-  mount                      = vault_mount.kvv2.path
-  name                       = "secret"
-  cas                        = 1
-  delete_all_versions        = true
-  data_json                  = jsonencode(
-  {
-    zip       = "zap",
-    foo       = "bar"
-  }
-  )
-  custom_metadata {
-    max_versions = 5
-    data = {
-      foo = "vault@example.com",
-      bar = "12345"
+resource "vault_kv_secret_v2" "instance_credentials" {
+  mount               = local.vault_shared_path
+  name                = "instance_credentials"
+  cas                 = 1
+  delete_all_versions = true
+  data_json = jsonencode(
+    {
+      username        = var.instance_username
+      hashed_password = var.instance_hashed_password
+      password        = var.instance_password
+      salt            = var.instance_hashed_salt
     }
-  }
+  )
 }

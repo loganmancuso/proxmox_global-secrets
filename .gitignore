@@ -6,5 +6,5 @@
 /main.tf
 /*.tfvars
 /hosts
-# Generated Password
-/keys/private_key.pem
+# Generated Passwords
+*.tfvars

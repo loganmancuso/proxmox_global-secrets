@@ -8,7 +8,7 @@
 ## Shared Secrets ##
 
 variable "instance_credentials" {
-  description = "default credentials for an instance {username,password,hashed_password,salt}"
+  description = "default credentials for an instance {username,password,hashed_password,salt,pub_key}"
   type        = map(string)
   sensitive   = true
 }

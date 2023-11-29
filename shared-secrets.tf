@@ -10,12 +10,5 @@ resource "vault_kv_secret_v2" "instance_credentials" {
   name                = "instance_credentials"
   cas                 = 1
   delete_all_versions = true
-  data_json = jsonencode(
-    {
-      username        = var.instance_username
-      hashed_password = var.instance_hashed_password
-      password        = var.instance_password
-      salt            = var.instance_hashed_salt
-    }
-  )
+  data_json           = jsonencode(var.instance_credentials)
 }

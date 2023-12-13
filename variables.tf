@@ -20,3 +20,9 @@ variable "k8_postgres" {
   type        = map(string)
   sensitive   = true
 }
+
+variable "pgadmin4" {
+  description = "pgadmin4 credentials {username,password}"
+  type        = map(string)
+  sensitive   = true
+}

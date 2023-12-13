@@ -21,8 +21,8 @@ variable "k8_postgres" {
   sensitive   = true
 }
 
-variable "pgadmin4" {
-  description = "pgadmin4 credentials {username,password}"
+variable "nginx" {
+  description = "nginx credentials {username,password,db_username,db_password}"
   type        = map(string)
   sensitive   = true
 }

@@ -17,7 +17,7 @@ output "vault_infra_k8_postgres" {
   value       = vault_kv_secret_v2.k8_postgres.name
 }
 
-output "vault_infra_pgadmin4" {
-  description = "path in vault to pgadmin4 secret"
-  value       = vault_kv_secret_v2.pgadmin4.name
+output "vault_infra_nginx" {
+  description = "path in vault to nginx secret"
+  value       = vault_kv_secret_v2.nginx.name
 }

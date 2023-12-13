@@ -14,10 +14,10 @@ resource "vault_kv_secret_v2" "k8_postgres" {
 }
 
 
-resource "vault_kv_secret_v2" "pgadmin4" {
+resource "vault_kv_secret_v2" "nginx" {
   mount               = local.vault_infra_path
-  name                = "pgadmin4"
+  name                = "nginx"
   cas                 = 1
   delete_all_versions = true
-  data_json           = jsonencode(var.pgadmin4)
+  data_json           = jsonencode(var.nginx)
 }

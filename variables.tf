@@ -21,8 +21,15 @@ variable "k8_postgres" {
   sensitive   = true
 }
 
+## App Secrets ##
 variable "nginx" {
   description = "nginx credentials {username,password,db_username,db_password}"
+  type        = map(string)
+  sensitive   = true
+}
+
+variable "homeassistant" {
+  description = "homeassistant credentials {zwave_key}"
   type        = map(string)
   sensitive   = true
 }

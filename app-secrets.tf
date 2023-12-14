@@ -18,5 +18,5 @@ resource "vault_kv_secret_v2" "homeassistant" {
   name                = "homeassistant"
   cas                 = 1
   delete_all_versions = true
-  data_json           = jsonencode(var.nginx)
+  data_json           = jsonencode(var.homeassistant)
 }

@@ -7,10 +7,10 @@
 
 resource "vault_kv_secret_v2" "nginx" {
   mount               = local.vault_app_path
-  name                = "nginx"
+  name                = "nginx-proxymanager"
   cas                 = 1
   delete_all_versions = true
-  data_json           = jsonencode(var.nginx)
+  data_json           = jsonencode(var.nginx_proxymanager)
 }
 
 resource "vault_kv_secret_v2" "homeassistant" {

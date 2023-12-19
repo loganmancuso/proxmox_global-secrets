@@ -22,7 +22,7 @@ variable "k8_postgres" {
 }
 
 ## App Secrets ##
-variable "nginx" {
+variable "nginx_proxymanager" {
   description = "nginx credentials {username,password,db_username,db_password}"
   type        = map(string)
   sensitive   = true

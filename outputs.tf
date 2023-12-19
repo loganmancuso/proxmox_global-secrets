@@ -6,23 +6,35 @@
 ##############################################################################
 
 ## Shared Secrets ##
-output "vault_shared_instance_credentials" {
+output "instance_credentials" {
   description = "path in vault to instance_credentials secret"
-  value       = vault_kv_secret_v2.instance_credentials.name
+  value = {
+    mount = local.vault_shared_path
+    name  = vault_kv_secret_v2.instance_credentials.name
+  }
 }
 
 ## Infra Secrets ##
-output "vault_infra_k8_postgres" {
+output "k8_postgres" {
   description = "path in vault to k8_postgres secret"
-  value       = vault_kv_secret_v2.k8_postgres.name
+  value = {
+    mount = local.vault_infra_path
+    name  = vault_kv_secret_v2.k8_postgres.name
+  }
 }
 
 ## App Secrets ##
-output "vault_app_nginx" {
+output "nginx_proxymanager" {
   description = "path in vault to nginx secret"
-  value       = vault_kv_secret_v2.nginx.name
+  value = {
+    mount = local.vault_app_path
+    name  = vault_kv_secret_v2.nginx.name
+  }
 }
 output "vault_app_homeassistant" {
   description = "path in vault to homeassistant secret"
-  value       = vault_kv_secret_v2.homeassistant.name
+  value = {
+    mount = local.vault_app_path
+    name  = vault_kv_secret_v2.homeassistant.name
+  }
 }

@@ -31,7 +31,7 @@ output "nginx_proxymanager" {
     name  = vault_kv_secret_v2.nginx.name
   }
 }
-output "vault_app_homeassistant" {
+output "homeassistant" {
   description = "path in vault to homeassistant secret"
   value = {
     mount = local.vault_app_path

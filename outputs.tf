@@ -5,6 +5,35 @@
 #
 ##############################################################################
 
+## CA Certs ##
+output "cert_root" {
+  description = "root certificate authority"
+  value       = local.cert_root
+}
+output "root_priv_key" {
+  description = "root certificate authority private key"
+  value       = local.root_priv_key
+  sensitive   = true
+}
+output "root_pub_key" {
+  description = "root certificate authority public key"
+  value       = local.root_pub_key
+}
+output "client_priv_key" {
+  description = "client certificate private key"
+  value       = local.client_priv_key
+  sensitive   = true
+}
+output "client_pub_key" {
+  description = "client certificate public key"
+  value       = local.client_pub_key
+}
+output "cert_intranet" {
+  description = "client certificate"
+  value       = local.cert_intranet
+}
+
+
 ## Shared Secrets ##
 output "instance_credentials" {
   description = "path in vault to instance_credentials secret"

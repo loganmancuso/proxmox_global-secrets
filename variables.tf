@@ -7,6 +7,12 @@
 
 ## Shared Secrets ##
 
+variable "proxmox_credentials" {
+  description = "default credentials for the proxmox instance {root_password, ops_password}"
+  type        = map(string)
+  sensitive   = true
+}
+
 variable "instance_credentials" {
   description = "default credentials for an instance {username,password,hashed_password,salt,pub_key}"
   type        = map(string)

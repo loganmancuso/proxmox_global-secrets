@@ -21,6 +21,12 @@ variable "instance_credentials" {
 
 ## Infra Secrets ##
 
+variable "thoth" {
+  description = "Thoth Data instance credentials {restic_password}"
+  type        = map(string)
+  sensitive   = true
+}
+
 variable "k8_postgres" {
   description = "k8 postgres cluster credentials {username,password}"
   type        = map(string)

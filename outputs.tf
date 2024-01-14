@@ -44,6 +44,14 @@ output "instance_credentials" {
 }
 
 ## Infra Secrets ##
+output "thoth" {
+  description = "path in vault to thoth secret"
+  value = {
+    mount = local.vault_infra_path
+    name  = vault_kv_secret_v2.thoth.name
+  }
+}
+
 output "k8_postgres" {
   description = "path in vault to k8_postgres secret"
   value = {

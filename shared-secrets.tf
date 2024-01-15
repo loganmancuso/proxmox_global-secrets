@@ -5,18 +5,18 @@
 #
 ##############################################################################
 
-resource "vault_kv_secret_v2" "proxmox_credentials" {
+resource "vault_kv_secret_v2" "proxmox" {
   mount               = local.vault_shared_path
-  name                = "proxmox_credentials"
+  name                = "proxmox"
   cas                 = 1
   delete_all_versions = true
-  data_json           = jsonencode(var.proxmox_credentials)
+  data_json           = jsonencode(var.proxmox)
 }
 
-resource "vault_kv_secret_v2" "instance_credentials" {
+resource "vault_kv_secret_v2" "instance" {
   mount               = local.vault_shared_path
-  name                = "instance_credentials"
+  name                = "instance"
   cas                 = 1
   delete_all_versions = true
-  data_json           = jsonencode(var.instance_credentials)
+  data_json           = jsonencode(var.instance)
 }

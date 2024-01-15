@@ -35,11 +35,19 @@ output "cert_intranet" {
 
 
 ## Shared Secrets ##
-output "instance_credentials" {
-  description = "path in vault to instance_credentials secret"
+output "proxmox" {
+  description = "path in vault to proxmox secret"
   value = {
     mount = local.vault_shared_path
-    name  = vault_kv_secret_v2.instance_credentials.name
+    name  = vault_kv_secret_v2.proxmox.name
+  }
+}
+
+output "instance" {
+  description = "path in vault to instance secret"
+  value = {
+    mount = local.vault_shared_path
+    name  = vault_kv_secret_v2.instance.name
   }
 }
 

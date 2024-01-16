@@ -20,3 +20,11 @@ resource "vault_kv_secret_v2" "homeassistant" {
   delete_all_versions = true
   data_json           = jsonencode(var.homeassistant)
 }
+
+resource "vault_kv_secret_v2" "nextcloud" {
+  mount               = local.vault_app_path
+  name                = "nextcloud"
+  cas                 = 1
+  delete_all_versions = true
+  data_json           = jsonencode(var.nextcloud)
+}

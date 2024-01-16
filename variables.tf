@@ -45,3 +45,9 @@ variable "homeassistant" {
   type        = map(string)
   sensitive   = true
 }
+
+variable "nextcloud" {
+  description = "nextcloud credentials {}"
+  type        = map(string)
+  sensitive   = true
+}
